@@ -1,0 +1,91 @@
+{
+  "name": "text",
+  "rules": {
+    "source_file": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "paragraph"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "final_paragraph"
+        }
+      ]
+    },
+    "final_paragraph": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "line"
+      }
+    },
+    "paragraph": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "line"
+          }
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_blankline"
+          }
+        }
+      ]
+    },
+    "_blankline": {
+      "type": "PATTERN",
+      "value": "[\\n\\r]"
+    },
+    "line": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "_whitespace"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "word"
+              }
+            ]
+          }
+        },
+        {
+          "type": "PATTERN",
+          "value": "[\\n\\r]"
+        }
+      ]
+    },
+    "_whitespace": {
+      "type": "PATTERN",
+      "value": "[\\t ]"
+    },
+    "word": {
+      "type": "PATTERN",
+      "value": "[^\\s]+"
+    }
+  },
+  "extras": [],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+

@@ -1,0 +1,51 @@
+================
+Single line text
+================
+One line of text
+
+---
+
+(source_file
+  (final_paragraph
+    (line
+      (word) (word) (word) (word))))
+
+==================
+Multiple line text
+==================
+It was a bright cold day in April,
+and the clocks were striking thirteen.
+
+---
+
+(source_file
+  (final_paragraph
+    (line
+      (word) (word) (word) (word) (word) (word) (word) (word))
+    (line
+      (word) (word) (word) (word) (word) (word))))
+
+=======================
+Multiple paragraph text
+=======================
+A paragraph
+
+A second paragraph
+with two lines.
+
+The final paragraph
+
+---
+
+(source_file
+  (paragraph
+    (line
+      (word) (word)))
+  (paragraph
+    (line
+      (word) (word) (word))
+    (line
+      (word) (word) (word)))
+  (final_paragraph
+    (line
+      (word) (word) (word))))
